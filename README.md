@@ -1,5 +1,5 @@
-# Case Técnico QA - Parana Banco
-Projeto criado em cypress para entrega de case técnico de QA para testes de API da empresa Parana Banco
+# Case Técnico QA - Paraná Banco
+Projeto criado em cypress para entrega de case técnico de QA para testes de API da empresa Paraná Banco
 
 Para executar o projeto será necessário ter o node e npm
 
