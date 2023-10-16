@@ -1,7 +1,7 @@
 
 
 describe('Testes de API do case técnico da empresa Parana Banco', () => {
-    it('GET Users', () => {
+    it('GET Users - Success', () => {
         cy.getUsers()
         cy.get('@response').should((response) => {
             expect(response.status).to.equal(200);
@@ -47,20 +47,20 @@ describe('Testes de API do case técnico da empresa Parana Banco', () => {
             expect(response.body).to.be.jsonSchema(jsonSchema);
         })
     })
-    it('GET User by ID', () => {
+    it('GET User by ID - Success', () => {
 
         const id = 1;
 
         cy.getUserById(id)
         cy.get('@response').should((response) => {
             expect(response.status).to.equal(200),
-                expect(response.body.name).to.equal('Leanne Graham')
+            expect(response.body.name).to.equal('Leanne Graham')
             expect(response.body.username).to.equal('Bret')
             expect(response.body.email).to.equal('Sincere@april.biz')
         })
     });
 
-    it('Create a new user', () => {
+    it('Create a new user - Success', () => {
         const newUser = {
             name: 'Pedro Nascimento',
             username: 'pedroNascimento',
@@ -77,7 +77,7 @@ describe('Testes de API do case técnico da empresa Parana Banco', () => {
             });
     });
 
-    it('Update user data', () => {
+    it('Update user data - Success', () => {
         const userId = 1;
         const updatedUserData = {
             id: userId,
@@ -96,12 +96,21 @@ describe('Testes de API do case técnico da empresa Parana Banco', () => {
     });
 
 
-    it('Delete a user by ID', () => {
+    it('Delete a user by ID - Success', () => {
         const userId = 1;
 
         cy.deleteUserById(userId)
             .then((response) => {
                 expect(response.status).to.equal(200);
             });
+    });
+
+    it('GET User by ID - Not found', () => {
+        const id = 11;
+
+        cy.getUserById(id)
+        cy.get('@response').should((response) => {
+            expect(response.status).to.equal(404)
+        })
     });
 });
