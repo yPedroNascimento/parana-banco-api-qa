@@ -7,10 +7,11 @@ Para instalar o cypress execute:
 ```
     npm install cypress --save-dev
 ```
+
 Para instalar o chai-json-schema execute:
 ```
     npm install chai-json-schema
-```
+``````
 
 Para executar o projeto, rodar o comando abaixo:
 ```
