@@ -13,6 +13,6 @@ Para instalar o chai-json-schema execute:
 ```
 
 Para executar o projeto, rodar o comando abaixo:
-``
+```
     npm run cypress
 ```
