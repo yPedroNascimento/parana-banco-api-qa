@@ -3,7 +3,7 @@
 describe('Testes de API do case técnico da empresa Parana Banco', () => {
     it('GET Users - Success', () => {
         cy.getUsers()
-        cy.get('@response').should((response) => {
+        .then((response) => {
             expect(response.status).to.equal(200);
             const jsonSchema = {
                 type: 'array',
@@ -52,7 +52,7 @@ describe('Testes de API do case técnico da empresa Parana Banco', () => {
         const id = 1;
 
         cy.getUserById(id)
-        cy.get('@response').should((response) => {
+        .then((response) => {
             expect(response.status).to.equal(200),
             expect(response.body.name).to.equal('Leanne Graham')
             expect(response.body.username).to.equal('Bret')
@@ -106,10 +106,10 @@ describe('Testes de API do case técnico da empresa Parana Banco', () => {
     });
 
     it('GET User by ID - Not found', () => {
-        const id = 11;
+        const id = 0;
 
         cy.getUserById(id)
-        cy.get('@response').should((response) => {
+        .then((response) => {
             expect(response.status).to.equal(404)
         })
     });
